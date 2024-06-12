@@ -3,9 +3,7 @@ package com.todosimple.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
@@ -13,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 public class Task {
     public static final String TABLE_NAME = "task";
 
@@ -29,6 +29,7 @@ public class Task {
     @Size(min = 1, max = 255)
     @NotBlank
     private String description;
+
 
 }
 

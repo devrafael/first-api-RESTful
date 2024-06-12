@@ -1,26 +1,33 @@
 package com.todosimple.models;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Setter;
 
 @Entity
 @Table(name = User.TABLE_NAME)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 public class User {
 
     public static final String TABLE_NAME = "user";
@@ -44,4 +51,5 @@ public class User {
     @OneToMany(mappedBy = "user")
     @JsonProperty(access = Access.WRITE_ONLY)
     private List<Task> tasks = new ArrayList<Task>();
+
 }
