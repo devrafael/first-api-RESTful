@@ -37,6 +37,7 @@ public class TaskService {
         return obj;
     }
 
+    @Transactional
     public Task update(Task obj){
        Task newObj = findById(obj.getId());
        newObj.setDescription(obj.getDescription());
