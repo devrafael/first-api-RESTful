@@ -36,7 +36,6 @@ public class User {
     public interface CreatedUser{}
     public interface UpdateUser{}
 
-
     public static final String TABLE_NAME = "user";
 
     @Id
