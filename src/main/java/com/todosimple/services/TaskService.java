@@ -25,7 +25,8 @@ public class TaskService {
         return task.orElseThrow(() -> new RuntimeException("Usuario nao encontrad! Id: " + id + ", Tipo: " + Task.class.getName()));
     }
 
-    public List<Task> findAll(){
+    public List<Task> findAllByUserId(Long userID){
+        List<Task> tasks = taskRepository.findByUser_Id(userID);
         return this.taskRepository.findAll();
     }
 

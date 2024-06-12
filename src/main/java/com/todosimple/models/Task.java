@@ -21,14 +21,16 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false, updatable = false)
-    private User user;
-
     @Column(name = "description", length = 255, nullable = false)
     @Size(min = 1, max = 255)
     @NotBlank
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false, updatable = false)
+    private User user;
+
+
 
 
 }
