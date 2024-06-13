@@ -13,6 +13,7 @@ import lombok.*;
 @Data
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Task {
     public static final String TABLE_NAME = "task";
 
